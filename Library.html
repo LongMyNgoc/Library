@@ -1,10 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Logo.jpeg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Library.css">
     <title>Library</title>
 </head>
 <body>
+    <header class="d-flex justify-content-between align-items-center">
+        <img src="Pictures/CNTT.png" class="header-logo">
+        <h1 style="color: red"><big><big><big>LIBRARY</big></big></big></h1>
+        <img src="Pictures/HCMUE.png" class="header-logo">
+    </header>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="Library.html">TRANG CHỦ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">ĐĂNG NHẬP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">ĐĂNG KÝ</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="manageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        MANAGE
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="manageDropdown">
+                        <li><a class="dropdown-item" href="User.html">User</a></li>
+                        <li><a class="dropdown-item" href="BorrowingRecords.html">BorrowingRecords</a></li>
+                        <li><a class="dropdown-item" href="Books.html">Book</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                Địa chỉ: 280 An Dương Vương, P4, Q5 | SĐT: 0363291823 |
+                <a href="mailto:longmyngoc2004@gmail.com" class="btn btn-warning">Email</a>
+            </span>
+        </div>
+    </nav>
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Đăng Nhập</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="login">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <select id="role" name="role" class="form-select">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Đăng Ký</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="login">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3"></div>
+                            <label for="password" class="form-label">Repeat Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">REGISTER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <input type="text" id="searchInput" class="form-control mb-3" placeholder="Tìm kiếm sách...">
+        <table class="table table-bordered table-hover" id="booksTable">
+            <thead class="table-dark">
+                <tr>
+                    <th>Book ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Price</th>
+                    <th>Publication Year</th>
+                    <th>Page Count</th>
+                    <th>Stock Date</th>
+                    <th>Status</th>
+                    <th>Borrow</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dữ liệu sẽ được thêm động thông qua JavaScript -->
+            </tbody>
+        </table>
+    </div>    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Library.js"></script>
 </body>
 </html>
