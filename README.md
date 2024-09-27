@@ -7,7 +7,7 @@
 ## Cài đặt
 1. Clone dự án về máy tính:
 '''bash
-git clone https://github.com/LongMyNgoc/Library.git
+git clone https://github.com/LongMyNgoc/Library.git '''
 2. Chạy lệnh sau để cài đặt các gói phụ thuộc:
    ```bash
    npm install
